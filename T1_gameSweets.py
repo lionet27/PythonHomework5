@@ -7,11 +7,11 @@ import random
 def mansMove(candys)->int:
     tookCandys=int(input('Введите сколько конфет вы возьмете(!не больше 28):'))
     if candys<28:
-        while tookCandys<0 or tookCandys>candys:
+        while tookCandys<1 or tookCandys>candys:
             print(f'Вы взяли конфет больше,чем осталось! Вы можете взять от 1 до {candys}!')
             tookCandys=int(input('Введите еще раз сколько конфет вы возьмете:'))
     else:
-        while tookCandys<0 or tookCandys>28:
+        while tookCandys<1 or tookCandys>28:
             print('Вы ввели неправильное число конфет!Должно быть от 1 до 28!')
             tookCandys=int(input('Введите еще раз сколько конфет вы возьмете:'))
     leftoverСandy=candys-tookCandys
