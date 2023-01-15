@@ -14,11 +14,14 @@ def printXO(position:list):
     print(f' {position[6]} | {position[7]} | {position[8]} ')
 
 def X(position:list):
-    n=int(input('Игрок1, введите номер места,куда вы хотите поставить X: '))
-    for i in range(0,9):
-        if pos[i]==n:
-            pos[i]='X'
-            posX.add(i)
+    numberX=len(posX)
+    while  numberX==len(posX):
+        n=int(input('Игрок1, введите номер места,куда вы хотите поставить X: '))
+        for i in range(0,9):
+            if pos[i]==n:
+                pos[i]='X'
+                posX.add(i)
+    
     if len(posX)>=3:
         for i in range(0,8):
             win=set(winCombinations[i])
@@ -29,11 +32,14 @@ def X(position:list):
     return position
 
 def O(position:list):
-    n=int(input('Игрок2, введите номер места,куда вы хотите поставить O: '))
-    for i in range(0,9):
-        if pos[i]==n:
-            pos[i]='O'
-            posO.add(i)
+    numberO=len(posO)
+    while  numberO==len(posO):
+        n=int(input('Игрок2, введите номер места,куда вы хотите поставить O: '))
+        for i in range(0,9):
+            if pos[i]==n:
+                pos[i]='O'
+                posO.add(i)
+                
     if len(posO)>=3:
         for i in range(0,8):
             win=set(winCombinations[i])
