@@ -40,15 +40,21 @@ def isNumber(str):
 
 def unRleText(newtext):
     unpackingText=''
+    number=''
 
     for i in range(0,len(newtext)):
         if isNumber(newtext[i]):
-            
-            for j in range(1,int(newtext[i])):
-                unpackingText=unpackingText+newtext[i+1]
+            number+=newtext[i]
         else:
-            unpackingText=unpackingText+newtext[i]
+            if number.isdigit():      
+                for j in range(int(number)):
+                    unpackingText+=newtext[i]
+                number=''    
+            else:
+                unpackingText+=newtext[i]
     return unpackingText
+
+
 
 packingText=rleText(text)
 print(packingText)
